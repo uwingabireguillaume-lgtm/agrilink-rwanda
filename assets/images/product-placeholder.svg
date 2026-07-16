@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <rect width="400" height="300" fill="#F1EAD7"/>
+  <g transform="translate(200,150)" fill="#4C9A5B" opacity="0.55">
+    <path d="M0,-45 C25,-45 45,-25 45,0 C45,25 25,45 0,45 C-25,45 -45,25 -45,0 C-45,-25 -25,-45 0,-45 Z" opacity="0.25"/>
+    <path d="M0,-30 C-18,-20 -20,10 0,30 C20,10 18,-20 0,-30 Z"/>
+    <line x1="0" y1="30" x2="0" y2="45" stroke="#1F4D36" stroke-width="3"/>
+  </g>
+  <text x="200" y="230" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" fill="#6B7566">AgriLink Rwanda</text>
+</svg>

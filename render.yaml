@@ -1,0 +1,28 @@
+services:
+  - type: web
+    name: agrilink-rwanda
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: DB_HOST
+        fromDatabase:
+          name: agrilink-db
+          property: host
+      - key: DB_PORT
+        value: "3306"
+      - key: DB_NAME
+        value: agrilink
+      - key: DB_USER
+        fromDatabase:
+          name: agrilink-db
+          property: user
+      - key: DB_PASSWORD
+        fromDatabase:
+          name: agrilink-db
+          property: password
+
+# NOTE: Render's free tier does not include managed MySQL. Most students instead
+# provision a free MySQL instance from a provider such as Railway, Aiven, or
+# Clever Cloud, then set DB_HOST/DB_PORT/DB_NAME/DB_USER/DB_PASSWORD manually
+# in the Render dashboard's Environment tab instead of using fromDatabase above.

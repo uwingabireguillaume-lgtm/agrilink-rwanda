@@ -1,0 +1,14 @@
+# Environment / secrets
+.env
+
+# Uploaded user files (keep the folder, ignore its contents)
+uploads/*
+!uploads/.gitkeep
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+*.log
