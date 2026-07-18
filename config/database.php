@@ -24,6 +24,15 @@ $options = [
     PDO::ATTR_EMULATE_PREPARES   => false,
 ];
 
+// If a CA certificate is present (e.g. ca.pem at the project root, used by
+// managed hosts like Aiven), enable SSL. Local XAMPP has no such file, so
+// this has no effect on local development.
+$caCertPath = __DIR__ . '/../ca.pem';
+if (file_exists($caCertPath)) {
+    $options[PDO::MYSQL_ATTR_SSL_CA] = $caCertPath;
+    $options[PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT] = false;
+}
+
 try {
     $pdo = new PDO($dsn, $DB_USER, $DB_PASS, $options);
 } catch (PDOException $e) {
